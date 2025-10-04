@@ -7,7 +7,7 @@ type TaskCardProps = {
   onDoneClick: () => void;
 };
 
-const TaskCard: React.FC<TaskCardProps> = ({ title, description, isDone, onDoneClick }) => {
+const TaskCard: React.FC<TaskCardProps> = ({ title, description, onDoneClick }) => {
   return (
     <div className="w-full max-w-md p-5 bg-gray-300 rounded-lg shadow-xl flex justify-between items-center m-[20px]">
       <div>

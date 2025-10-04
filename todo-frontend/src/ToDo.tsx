@@ -5,11 +5,17 @@ import TaskCard from './component/TaskCard.tsx'
 import axios from 'axios';
 import toast from 'react-hot-toast';
 const ToDo = ()=> {
+  type Task = {
+  id: number;
+  title: string;
+  description: string;
+  isDone: boolean;
+};
 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
 
-    const [tasksList, setTasksList] = useState([]);
+    const [tasksList, setTasksList] = useState<Task[]>([]);
     const [loading, setLoading] = useState(false);
 
     const getAllTasks = async ()=>{

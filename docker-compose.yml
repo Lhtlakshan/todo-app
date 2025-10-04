@@ -1,0 +1,33 @@
+services:
+  db:
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    container_name: todo_db
+    environment:
+      POSTGRES_DB: todo_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+    ports:
+      - "5432:5432"
+
+  todo-backend:
+    build:
+      context: ./todo-backend
+      dockerfile: Dockerfile
+    container_name: todo_backend
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/todo_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 1234
+    ports:
+      - "8080:8080"
+
+  todo-frontend:
+    build:
+      context: ./todo-frontend
+    container_name: todo_frontend
+    ports:
+      - "3000:80"

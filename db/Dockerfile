@@ -4,6 +4,6 @@ FROM postgres:16
 COPY init.sql /docker-entrypoint-initdb.d/
 
 # environment variable
-ENV POSTGRES_DB="todo_db"
-ENV POSTGRES_USER="postgres"
-ENV POSTGRES_PASSWORD="1234"
+ENV POSTGRES_DB=todo_db
+ENV POSTGRES_USER=postgres
+ENV POSTGRES_PASSWORD=1234
