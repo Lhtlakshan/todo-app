@@ -16,7 +16,7 @@ docker run --name todo_db --network todo_network postgres_db
 ### Spring Boot docker setup
 ``` bash
 # Build Spring Boot image (from the folder containing Spring Boot Dockerfile)
-docker build -t todo_spring_boot_service
+docker build . -t todo_spring_boot_service
 
 # Run backend service and host it on localhost port 8080
 docker run -d -p 8080:8080 --name backend --network todo_network todo_spring_boot_service
