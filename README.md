@@ -7,7 +7,7 @@ docker network create todo_network
 ### Postgresql docker setup
 ``` bash
 # Build PostgreSQL image (from the folder containing PostgreSQL Dockerfile)
-docker build -t postgres_db
+docker build . -t postgres_db
 
 # Run PostgreSQL container from image
 docker run --name todo_db --network todo_network postgres_db
