@@ -34,7 +34,7 @@ public class TodoController {
     @GetMapping
     ResponseEntity<ApiResponse<List<TaskDto>>> getAllInCompletedTasks(){
         try{
-            return ResponseEntity.status(HttpStatus.CREATED).body(
+            return ResponseEntity.status(HttpStatus.OK).body(
                     new ApiResponse<>("All tasks", todoService.getAllInCompletedTasks()
                     ));
         }catch(Exception ex){
